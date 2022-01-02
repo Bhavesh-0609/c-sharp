@@ -1,7 +1,7 @@
-# c-sharp
+# C#
 C# documentation
 
-**Basics**
+## Basics
 
 >So in this section, you learned the basics of C#.
 >
@@ -23,7 +23,7 @@ C# documentation
 >
 >In the next section, you'll learn about basics of the C# language, including variables, constants, type conversion and operators.
 
-<br>**Variable types , formate string and constant in code**
+## <br>Variable types , formate string and constant in code
 ```
 using System;
 namespace ConsoleApp2
@@ -66,7 +66,7 @@ namespace ConsoleApp2
 }
 ```
 
-<br>**Type conversion theory**
+## Type conversion theory
 
 >In C#, there are two types of casting:
 >
@@ -74,8 +74,8 @@ namespace ConsoleApp2
 >char -> int -> long -> float -> double <br>
 >Explicit Casting (manually) - converting a larger type to a smaller size type<br>
 >double -> float -> long -> int -> char <br>
-
-**Implicit Casting**<br>
+>
+>### Implicit Casting<br>
 >Implicit casting is done automatically when passing a smaller size type to a larger size type:
 ```
 int myInt = 9;
@@ -85,7 +85,7 @@ Console.WriteLine(myInt);      // Outputs 9
 Console.WriteLine(myDouble);   // Outputs 9
 ```
 
-**Explicit Casting**<br>
+>### Explicit Casting<br>
 >Explicit casting must be done manually by placing the type in parentheses in front of the value:
 ```
 double myDouble = 9.78;
@@ -94,3 +94,47 @@ int myInt = (int) myDouble;    // Manual casting: double to int
 Console.WriteLine(myDouble);   // Outputs 9.78
 Console.WriteLine(myInt);      // Outputs 9
 ```
+>### Type conversion in code
+```
+using System;
+
+namespace type_conversion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Implicit Casting 
+            byte b = 1;
+            int i = b;
+            Console.WriteLine(i);
+
+            // Explicit Casting
+            int a = 10;
+            byte j = (byte)a;
+            Console.WriteLine(j);
+
+            // Non-compatible
+            // converting string to number with 'Convert' class function
+            var number = "1234";
+            int k = Convert.ToInt32(number);
+            Console.WriteLine(k);
+
+            // converting string into boolean
+            string str = "true";
+            bool l = Convert.ToBoolean(str);
+            Console.WriteLine(l);
+        }
+    }
+}
+```
+## Operators
+>- Arithmetic Operators
+>- Compatison Operators
+>- Assigment Operators
+>- Logical Operators
+>- Bitwise Operators
+
+>### Arithmetic Operators
+>Arithmetic operators are used to perform common mathematical operations:
+![2022-01-02](https://user-images.githubusercontent.com/92302123/147879525-0c8cfd9f-5423-4b4c-b352-f012c23c39f6.png)
