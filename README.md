@@ -130,11 +130,22 @@ namespace type_conversion
 ```
 ## Operators
 >- Arithmetic Operators
->- Compatison Operators
+>- Comparison Operators
 >- Assigment Operators
 >- Logical Operators
 >- Bitwise Operators
 
 >### Arithmetic Operators
 >Arithmetic operators are used to perform common mathematical operations:
-![2022-01-02](https://user-images.githubusercontent.com/92302123/147879525-0c8cfd9f-5423-4b4c-b352-f012c23c39f6.png)
+>![2022-01-02](https://user-images.githubusercontent.com/92302123/147879525-0c8cfd9f-5423-4b4c-b352-f012c23c39f6.png)
+>### Comparison Operators
+>Comparison operators are used to compare two values:
+>![2022-01-02 (1)](https://user-images.githubusercontent.com/92302123/147880091-1be55e51-a77a-4f48-8324-4b68c1525f71.png)
+>### Assignment Operators
+>Assignment operators are used to assign values to variables.
+>![2022-01-02 (2)](https://user-images.githubusercontent.com/92302123/147880270-fdb86303-3dbc-41bf-8363-a7c0e73a6bd5.png)
+>### Logical Operators
+>Logical operators are used to determine the logic between variables or values:
+>![2022-01-02 (3)](https://user-images.githubusercontent.com/92302123/147880356-0de8afde-a4cb-4cc0-a634-a4fbfe2ebda2.png)
+>### Bitwise Operators
+>![2022-01-02 (4)](https://user-images.githubusercontent.com/92302123/147880497-3d028dd1-0d57-4469-9840-19ec976274e3.png)
