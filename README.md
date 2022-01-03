@@ -23,7 +23,8 @@ C# documentation
 >
 >In the next section, you'll learn about basics of the C# language, including variables, constants, type conversion and operators.
 
-## <br>Variable types , formate string and constant in code
+# <br>Primitive Types and Expressions
+## Variable types , formate string and constant in code
 ```
 using System;
 namespace ConsoleApp2
@@ -151,3 +152,5 @@ namespace type_conversion
 >![2022-01-02 (4)](https://user-images.githubusercontent.com/92302123/147880497-3d028dd1-0d57-4469-9840-19ec976274e3.png)
 ## Primitive Types and Expressions (full summery)
 >[13.1 Summary Primitive Types And Expressions.pdf](https://github.com/Bhavesh-0609/c-sharp/files/7800777/13.1.Summary.Primitive.Types.And.Expressions.pdf)
+
+# Non-Primitive Types
