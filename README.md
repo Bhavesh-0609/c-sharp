@@ -185,3 +185,74 @@ namespace classes
 }
 
 ```
+## Array
+>Array is a data structure to store a collection of variables of same type
+
+>syntax
+```
+int[] numbers = new int[3];
+// int[] number = new int[3] {1, 2, 3}; // declaring and assigning value at same time
+```
+>Code of array
+```
+using System;
+
+namespace array_in_c_sharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[3];
+            // var number = new int[3]; // you can also write like this
+            numbers[0] = 1;
+
+            Console.WriteLine(numbers[0]);
+            Console.WriteLine(numbers[1]); // empty arrays default value in int is 0
+            Console.WriteLine(numbers[2]);
+
+            var flags = new bool[3];
+            flags[0] = true;
+
+            Console.WriteLine(flags[0]);
+            Console.WriteLine(flags[1]); // empty arrays default value in boolean is false
+            Console.WriteLine(flags[2]);
+
+            var names = new string[3] { "Jack", "John", "Mary" }; //object initialization syntax
+        }
+    }
+}
+```
+## Strings
+>String is a sequence of characters.
+>e.g. "Hello World"
+
+>Syntax
+```
+string firstName = "Mosh";
+```
+>Concatenating strings
+```
+string name = firstName + " " + lastName;
+```
+>String formating
+```
+string name = string.Format ("{0} {1}", firstName, lastName);
+```
+>Using string join
+```
+var numbers = new int[3] {1,2,3};
+string list = string.Join(",", numbers);
+```
+>String Elements
+```
+string name = "Mosh";
+char fristChar = name[0]; // output will be 'M' from "Mosh"
+// name[0] = 'm'; // this will give error b'cause Strings are immutable - Once you create them, you cannot change them.
+```
+>### Important in strings
+>
+>Strings are immutable - Once you create them, you cannot change them. like showen below
+```
+// name[0] = 'm'; // this will give error b'cause Strings are immutable - Once you create them, you cannot change them.
+```
