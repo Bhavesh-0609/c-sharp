@@ -256,3 +256,17 @@ char fristChar = name[0]; // output will be 'M' from "Mosh"
 ```
 // name[0] = 'm'; // this will give error b'cause Strings are immutable - Once you create them, you cannot change them.
 ```
+### Escape characters
+![2022-01-03 (1)](https://user-images.githubusercontent.com/92302123/147927980-ac6129df-8c18-40ce-b12f-846b05e680f0.png)
+>### Verbatim string
+>
+>adding path is string will not look good because of escape characters because you have to add doble back slash for a single back slash
+>
+>e.g.
+```
+string path = "c:\\projects\\project1\\folder1"; // dont do this
+```
+>in verbatim string you dont have to add double back slash like shown belowe
+```
+string path = @"c:\projects\project1\folder1"; // it is verbatim string
+```
