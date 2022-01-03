@@ -154,3 +154,34 @@ namespace type_conversion
 >[13.1 Summary Primitive Types And Expressions.pdf](https://github.com/Bhavesh-0609/c-sharp/files/7800777/13.1.Summary.Primitive.Types.And.Expressions.pdf)
 
 # Non-Primitive Types
+## Class
+>A class is a user-defined blueprint or prototype from which objects are created. Basically, a class combines the fields and methods(member function which defines actions) into a single unit. In C#, classes support polymorphism, inheritance and also provide the concept of derived classes and base classes.
+```
+using System;
+
+namespace classes
+{
+    public class Person
+    { 
+        public string FirstName;
+        public string LastName;
+
+        public void Introduce()
+        {
+            Console.WriteLine("My name is " + FirstName + " " + LastName);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person john = new Person();
+            // var john = new Person(); // u can also write like this
+            john.FirstName = "John";
+            john.LastName = "Smith";
+            john.Introduce();
+        }
+    }
+}
+
+```
