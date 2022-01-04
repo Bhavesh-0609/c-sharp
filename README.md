@@ -454,3 +454,39 @@ namespace reference_type_and_value_type
     }
 }
 ```
+> ### Value type and Reference type full code - 2
+```
+ using System;
+
+namespace Reference_Types_and_Value_Types_2
+{
+    public class Person
+    {
+        public int Age;
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var number = 1;
+            Increment(number);
+            Console.WriteLine("number : " + number);
+
+            var person = new Person() { Age = 20 };
+            MakeOld(person);
+            Console.WriteLine(person.Age); 
+        }
+        public static void Increment(int number)
+        {
+            number += 10;
+        }
+        
+        public static void MakeOld(Person person)
+        {
+            person.Age += 10;
+        }
+    }
+}
+```
+## Full summary Non Primitive Types
+[15.1 Summary Non Primitive Types.pdf](https://github.com/Bhavesh-0609/c-sharp/files/7809452/15.1.Summary.Non.Primitive.Types.pdf)
