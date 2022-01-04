@@ -304,14 +304,14 @@ namespace strings
 
 ## Enum
 >An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
-
+>In enum if we don't set any value to the members of enum then the first member is going to be automatically set to zero and from there every member's value will be increamented by 1.
 >syntax
 ```
 public enum ShippingMethod
 {
-    RegularAirMail = 1;
-    RegisteredAirMail = 2;
-    Express = 3;
+    RegularAirMail = 1,
+    RegisteredAirMail = 2,
+    Express = 3
 }
 ```
 >How to access enum
@@ -322,8 +322,39 @@ var method = ShippingMethod.Express;
 ```
 public enum ShippingMethod : byte
 {
-    RegularAirMail = 1;
-    RegisteredAirMail = 2;
-    Express = 3;
+    RegularAirMail = 1,
+    RegisteredAirMail = 2,
+    Express = 3
+}
+```
+> ### Enum full code
+```
+using System;
+
+namespace enum_in_c_sharp
+{
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method); // converting string to their number(int)
+
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId); // converting the number to their string
+
+            Console.WriteLine(method.ToString());
+
+            var methodName = "Express";
+            var shippMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine(shippMethod);
+        }
+    }
 }
 ```
