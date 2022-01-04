@@ -193,7 +193,7 @@ namespace classes
 int[] numbers = new int[3];
 // int[] number = new int[3] {1, 2, 3}; // declaring and assigning value at same time
 ```
->Code of array
+>### Code of array
 ```
 using System;
 
@@ -269,4 +269,61 @@ string path = "c:\\projects\\project1\\folder1"; // dont do this
 >in verbatim string you dont have to add double back slash like shown belowe
 ```
 string path = @"c:\projects\project1\folder1"; // it is verbatim string
+```
+>### Full code of strings
+```
+using System;
+
+namespace strings
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string firstName = "Mosh";
+            string lastName = "Hamedani";
+
+            var fullName = firstName + " " + lastName;
+
+            var myFullName = string.Format("My name is {0} {1}", firstName, lastName); // concatinating string with function
+
+            var names = new string[3] { "John", "Jack", "Marry" }; // string array
+            var formattedName = string.Join(",", names); // formating strings with couma "," 
+            // Console.WriteLine(formattedName);
+
+            var text = "Hi John\nLook into the following paths\nc:\\folder\\folder2\nc:\\folder3\\folder4"; // this is simple string and not look so good
+            var verbString = @"Hi John
+                Look into the following paths
+                c:\folder\folder2
+                c:\folder3\folder4"; // this is verbatim string and its denoted with @ sign in verbatim string you dont have to use escape characters
+            Console.WriteLine(text);
+        }
+    }
+}
+```
+
+## Enum
+>An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
+
+>syntax
+```
+public enum ShippingMethod
+{
+    RegularAirMail = 1;
+    RegisteredAirMail = 2;
+    Express = 3;
+}
+```
+>How to access enum
+```
+var method = ShippingMethod.Express;
+```
+>Enum's basic data type is int. if you want to change to other data type then you have to declere enum like this
+```
+public enum ShippingMethod : byte
+{
+    RegularAirMail = 1;
+    RegisteredAirMail = 2;
+    Express = 3;
+}
 ```
