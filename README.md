@@ -358,3 +358,99 @@ namespace enum_in_c_sharp
     }
 }
 ```
+## Value type and Reference type
+>### Value type 
+>A data type is a value type if it holds a data value within its own memory space. It means the variables of these data types directly contain values.
+> 
+>The following data types are all of value type:
+>- bool
+>- byte
+>- char
+>- decimal
+>- double
+>- enum
+>- float
+>- int
+>- long
+>- sbyte
+>- short
+>- struct
+>- uint
+>- ulong
+>- ushort
+>
+>#### Passing Value Type Variables
+>When you pass a value-type variable from one method to another, the system creates a separate copy of a variable in another method. If value got changed in the one method, it wouldn't affect the variable in another method.
+>
+>Example: Passing Value Type Variables
+```
+static void ChangeValue(int x)
+{
+    x =  200;
+
+    Console.WriteLine(x);
+}
+
+static void Main(string[] args)
+{
+    int i = 100;
+
+    Console.WriteLine(i);
+    
+    ChangeValue(i);
+    
+    Console.WriteLine(i);
+}
+```
+>### Reference Type
+>Unlike value types, a reference type doesn't store its value directly. Instead, it stores the address where the value is being stored. In other words, a reference type contains a pointer to another memory location that holds the data.
+>
+>The followings are reference type data types:
+>- String
+>- Arrays (even if their elements are value types)
+>- Class
+>- Delegate
+>
+>#### Passing Reference Type Variables
+>When you pass a reference type variable from one method to another, it doesn't create a new copy; instead, it passes the variable's address. So, If we change the value of a variable in a method, it will also be reflected in the calling method.
+>
+>Example: Passing Reference Type Variable
+```
+static void ChangeReferenceType(Student std2)
+{
+    std2.StudentName = "Steve";
+}
+
+static void Main(string[] args)
+{
+    Student std1 = new Student();
+    std1.StudentName = "Bill";
+    
+    ChangeReferenceType(std1);
+
+    Console.WriteLine(std1.StudentName);
+}
+```
+> ### Value type and Reference type full code
+```
+using System;
+
+namespace reference_type_and_value_type
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var a = 10;
+            var b = a;
+            b++;
+            Console.WriteLine(string.Format("a : {0}, b: {1}", a, b));
+            
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+            Console.WriteLine(string.Format("array1[0] : {0}, array2[0]: {1}", array1[0], array2[0]));
+        }
+    }
+}
+```
