@@ -644,4 +644,128 @@ for (var i = 0; i < 10; i++)
     // code
 }
 ```
+>#### Full code of for loop
+```
+using System;
+
+namespace for_loop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (var i = 0; i<=10; i++)
+            {
+                if (i%2 == 0)
+                {
+                    Console.WriteLine(i);
+                }   
+            }
+
+            for (var i = 10; i>=0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}
+```
 >### Foreach
+>The foreach loop is used to iterate over the elements of the collection. The collection may be an array or a list. It executes for each element present in the array.
+```
+foreach (var number in numbers)
+{
+    // code
+}
+```
+>#### Full code of foreach loop
+```
+using System;
+
+namespace foreach_loop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var name = "John smith";
+
+            //for (var i = 0; i < name.Length; i++)
+            //{
+            //    Console.WriteLine(name[i]);
+            //}
+
+            foreach (char c in name)
+            {
+                Console.WriteLine(c);
+            }
+            
+            var numbers = new int[] { 1, 2, 3, 4, 5, 6 };
+            foreach(var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+    }
+}
+```
+>### While loop
+>The test condition is given in the beginning of the loop and all statements are executed till the given boolean condition satisfies when the condition becomes false, the control will be out from the while loop.
+```
+while (i < 10)
+{
+    // code
+    i++;
+}
+```
+>### Do-while loop
+>do while loop is similar to while loop with the only difference that it checks the condition after executing the statements, i.e it will execute the loop body one time for sure because it checks the condition after executing the statements.
+```
+do
+{
+    // code
+    i++;
+} while (i < 10);
+```
+## Break and continue
+>- Break : jumps out of the loop
+>- Countinue : jumps to the next iteration
+>#### Full code of while loop and break,countinue
+```
+using System;
+
+namespace while_loops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // var i = 0;
+            /*while (i <= 10)
+            {
+                if (i%2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+                i++;
+            }*/
+
+            while (true)
+            {
+                Console.Write("Type your name : ");
+                var input = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("@Echo : " + input);
+                    continue;
+                }
+                break;
+            }
+        }
+    }
+}
+```
