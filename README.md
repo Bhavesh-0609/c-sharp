@@ -490,3 +490,158 @@ namespace Reference_Types_and_Value_Types_2
 ```
 ## Full summary Non Primitive Types
 [15.1 Summary Non Primitive Types.pdf](https://github.com/Bhavesh-0609/c-sharp/files/7809452/15.1.Summary.Non.Primitive.Types.pdf)
+
+# Control flow
+>In this part of the C# tutorial, will talk about the flow control. We define several keywords that enable us to control the flow of a C# program.
+>
+>In C# language there are several keywords that are used to alter the flow of the program. When the program is run, the statements are executed from the top of the source file to the bottom. One by one. This flow can be altered by specific keywords. Statements can be executed multiple times. Some statements are called conditional statements. They are executed only if a specific condition is met.
+
+## Conditional statements
+>- If/else statement
+>- Switch/case statement
+>- Conditional operators: a?b : c
+>
+>### If/else statement
+>#### If statement
+>The if keyword is used to check if an expression is true. If it is true, a statement is then executed. The statement can be a single statement or a compound statement. A compound statement consists of multiple statements enclosed by the block. A block is code enclosed by curly brackets.
+>#### Else statement
+>We can use the else keyword to create a simple branch. If the expression inside the square brackets following the if keyword evaluates to false, the statement following the else keyword is automatically executed.
+>#### Else if
+>We can create multiple branches using the else if keyword. The else if keyword tests for another condition if and only if the previous condition was not met. Note that we can use multiple else if keywords in our tests.
+>#### Syntax
+```
+if (condition)
+{
+    // code
+}
+else if (anotherCondition)
+{
+    // code
+}
+else
+{
+    // code
+}
+```
+>### Switch statement
+>The switch statement is a selection control flow statement. It allows the value of a variable or expression to control the flow of program execution via a multi-way branch. It creates multiple branches in a simpler way than using the combination of if/else if/else statements.
+>
+>We have a variable or an expression. The switch keyword is used to test a value from the variable or the expression against a list of values. The list of values is presented with the case keyword. If the values match, the statement following the case is executed. There is an optional default statement. It is executed if no other match is found.
+>
+>Since C# 7.0, the match expression can be any non-null expression.
+>#### Syntax
+```
+switch(role)
+{
+    case Role.Admin:
+        ...
+        break;
+    case Role.Moderator:
+        ...
+        break;
+    default:
+        ...
+        break;
+}
+```
+>### Conditional operator
+>C# includes a decision-making operator ?: which is called the conditional operator or ternary operator. It is the short form of the if else conditions.
+```
+bool isGoldCustomer = true;
+float price = (isGoldCustomer) ? 19.95f : 29.95f;
+Console.WriteLine(price);
+```
+>### Full code of Conditional statement
+```
+using System;
+
+namespace demo_if_else
+{
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Autumn,
+        Winter
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*int hour = 16;
+
+            if (hour > 0 && hour < 12)
+            {
+                Console.WriteLine("It's morning.");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                Console.WriteLine("It's afternoon.");
+            }
+            else
+            {
+                Console.WriteLine("It's evening.");
+            }*/
+
+            // Another example
+
+            //bool isGoldCustomer = true;
+            /*float price;
+
+            if (isGoldCustomer)
+            {
+                price = 19.95f;
+            }
+            else
+            {
+                price = 29.95f;
+            }*/
+
+            // you can also write like this
+            /*float price = (isGoldCustomer) ? 19.95f : 29.95f;
+            Console.WriteLine(price);*/
+
+
+            // switch case
+            var season = Season.Autumn;
+            switch (season)
+            {
+                case Season.Autumn:
+                    Console.WriteLine("It's autumn and a beautiful season.");
+                    break;
+                case Season.Summer:
+                    Console.WriteLine("It's perfect to go to beach.");
+                    break;
+                default:
+                    Console.WriteLine("I don't understand that season!");
+                    break;
+            }
+        }
+    }
+}
+```
+## Loops
+>Looping in a programming language is a way to execute a statement or a set of statements multiple times depending on the result of the condition to be evaluated to execute statements. The result condition should be true to execute statements within loops.
+>
+>Loops are mainly divided into two categories:
+>
+>**Entry Controlled Loops**: The loops in which condition to be tested is present in beginning of loop body are known as Entry Controlled Loops. while loop and for loop are entry controlled loops.
+>
+>**Exit Controlled Loops**: The loops in which the testing condition is present at the end of loop body are termed as Exit Controlled Loops. do-while is an exit controlled loop.
+Note: In Exit Controlled Loops, loop body will be evaluated for at-least one time as the testing condition is present at the end of loop body.
+>
+>There is four types of loops
+>1. For loops
+>2. Foreach loops
+>3. While loops
+>4. Do-while loops
+>
+>### For loops
+>for loops are preferred when the number of times loop statements are to be executed is known beforehand. The loop variable initialization, condition to be tested, and increment/decrement of the loop variable is done in one line in for loop thereby providing a shorter, easy to debug structure of looping.
+```
+for (var i = 0; i < 10; i++)
+{
+    // code
+}
+```
+>### Foreach
