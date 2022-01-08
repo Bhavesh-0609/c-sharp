@@ -769,3 +769,144 @@ namespace while_loops
     }
 }
 ```
+## Random
+>Random class in C# is used to get a random integer number. This method can be overloaded by passing different parameters to it as follows: Next() Next(Int32) Next(Int32, Int32)
+>#### Full code
+```using System;
+
+namespace random_class
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //var random = new Random();
+            //for(var i = 0; i < 10; i++)
+            //    Console.WriteLine(random.Next(1,10));
+
+            var random_char = new Random();
+            var buffer = new char[10];
+            for (var i = 0; i < 10; i++)
+            {
+                Console.Write((char)random_char.Next(97, 122)); // printing random string with asci value
+                buffer[i] = (char)('a' + random_char.Next(0, 26)); // another way to generate string and store it into array
+            }
+            Console.WriteLine();
+            Console.WriteLine(buffer);
+        }
+    }
+}
+```
+## Controle flow exersices
+>1- Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder. Display the count on the console.
+>
+>2- Write a program and continuously ask the user to enter a number or "ok" to exit. Calculate the sum of all the previously entered numbers and display it on the console.
+>
+>3- Write a program and ask the user to enter a number. Compute the factorial of the number and print it on the console. For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 and display it as 5! = 120.
+>
+>4- Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number. If the user guesses the number, display “You won"; otherwise, display “You lost". (To make sure the program is behaving correctly, you can display the secret number on the console first.)
+>
+>5- Write a program and ask the user to enter a series of numbers separated by comma. Find the maximum of the numbers and display it on the console. For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
+>
+>#### Solution
+```
+using System;
+
+namespace Controle_flow_exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // exersice 1
+            /*var count = 0;
+            for(var i = 1; i < 100; i++)
+            {
+                if (i % 3 == 0)
+                    count++;
+            }
+            Console.WriteLine("The count of numbers which divided by 3 is " + count);*/
+
+            // exercise - 2
+            /*int i = 0,count2=0;
+            string[] arr = new string[100];
+            Console.WriteLine("Enter \"ok\" to EXIT");
+            while(arr[i] != "ok")
+            {
+                i++;
+                arr[i] = Console.ReadLine();
+            }
+            for(var j = 1; j < i; j++)
+            {
+                count2 += Convert.ToInt32(arr[j]);
+            }
+            Console.WriteLine("The sum of numbers is : " + count2);*/
+
+            // exercise - 3
+            /*int fact = Convert.ToInt32(Console.ReadLine());
+            int count = fact;
+            for(int i = 1; i < count; i++)
+            {
+                fact = fact * i;
+            }
+            Console.WriteLine(count + "! =" +fact);*/
+
+            // exercise - 4
+            /*var random = new Random();
+            int randomNumber = random.Next(1, 10), userGuess;
+            Console.Write("Guess number between 1 to 10 : ");
+            userGuess = Convert.ToInt32(Console.ReadLine());
+            if (randomNumber == userGuess)
+                Console.WriteLine("You win");
+            else
+                Console.WriteLine("You lost\nThe lucky number is " + randomNumber);*/
+
+            // exercise - 5
+            Console.Write("Enter numbers seperated by couma : ");
+            string numbersInCouma = Console.ReadLine(), temp = "";
+            string[] copy = new string[numbersInCouma.Length];
+            int count = 0;
+            for (int i = 0; i < numbersInCouma.Length; i++)
+            {
+                if (numbersInCouma[i] == ',')
+                {
+                    copy[count] = temp;
+                    temp = "";
+                    count++;
+                    continue;
+                }
+                temp = temp + Convert.ToString(numbersInCouma[i]);
+                if (i + 1 == numbersInCouma.Length)
+                    copy[count] = temp;
+            }
+            int MaxNum = 0;
+            foreach (var i in copy)
+            {
+                if (MaxNum < Convert.ToInt32(i))
+                {
+                    MaxNum = Convert.ToInt32(i);
+                }
+            }
+            Console.WriteLine("The maximum number is " + MaxNum);
+
+            // exercise - 5 solved by mosh
+            /*Console.Write("Enter commoa separated numbers: ");
+            var input = Console.ReadLine();
+
+            var numbers = input.Split(',');
+
+            // Assume the first number is the max 
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach (var str in numbers)
+            {
+                var number = Convert.ToInt32(str);
+                if (number > max)
+                    max = number;
+            }
+
+            Console.WriteLine("Max is " + max);*/
+        }
+    }
+}
+```
