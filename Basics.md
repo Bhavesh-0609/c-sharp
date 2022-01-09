@@ -972,3 +972,119 @@ array[0][0] = 1;
 ```
 #### Array properties
 >![2022-01-09 (1)](https://user-images.githubusercontent.com/92302123/148675140-f86626fd-8f98-451f-9a32-a163a79975b9.png)
+>##### Code of array properties
+```
+using System;
+
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var numbers = new[] { 3, 7, 9, 2, 14, 6 };
+
+            // Length
+            /*Console.WriteLine("Length : " + numbers.Length);*/
+
+            // IndexOf()
+            /*var index = Array.IndexOf(numbers, 9); // first parameter if array name and second parameter is value we have to found
+            Console.WriteLine("Index of 9 : " + index);*/
+
+            // Clear()
+            /*Array.Clear(numbers, 0, 2); // first parameter is array name , second is starting index, and thirs is ending index
+            foreach(var n in numbers)
+            {
+                Console.WriteLine(n);
+            }*/
+
+            // Copy()
+            /*int[] another = new int[3];
+            Array.Copy(numbers, another, 3); // 1st parameter is source array, 2nd parameter is destination array, 3rd parameter numbers of elemets we have to copy 
+            foreach (var n in another)
+            {
+                Console.WriteLine(n);
+            }*/
+
+            // Sort()
+            /*Array.Sort(numbers);
+            foreach (var n in numbers)
+                Console.WriteLine(n);*/
+
+            // Reverse()
+            Array.Reverse(numbers);
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+        }
+    }
+}
+```
+## Lists
+>A list is an object which holds variables in a specific order. The type of variable that the list can store is defined using the generic syntax.
+>
+>The difference between a list and an array is that lists are dynamic sized, while arrays have a fixed size. When you do not know the amount of variables your array should hold, use a list instead.
+>
+>For using list we have to add namespace
+```
+using System.Collections.Generic;
+```
+>### Syntax
+```
+var numbers = new list<int>();
+// you can also use this syntax
+// List<int> numbers = new List<int>();
+```
+>### Initializing and declaring at same time
+```
+var numbers = new List<int>() { 1, 2, 3, 4 };
+```
+### Usefull methods in list
+>1. Add()
+>2. AddRange()
+>3. Remove()
+>4. RemoveAt()
+>5. IndexOf()
+>6. Contains()
+>7. Count
+### Full code of lists
+```
+using System;
+using System.Collections.Generic;
+
+namespace lists
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var numbers = new List<int>() { 1, 2, 3, 4 };
+            numbers.Add(1); // For adding an elemnent in list
+             numbers.AddRange(new int[3] { 5, 6, 7 }); // adding list in list or array
+            /*foreach (var n in numbers)
+                Console.WriteLine(n);*/
+
+
+            /*Console.WriteLine("Index of 1 : " + numbers.IndexOf(1)); // this will give first index of given number
+            Console.WriteLine("Last Index of 1 : " + numbers.LastIndexOf(1));*/ // this will give last index of given number
+
+            /*Console.WriteLine("Count: " + numbers.Count);*/ // this will tell how many elements in list
+
+            /*numbers.Remove(1); // Removing first 1
+            foreach (var n in numbers)
+                Console.WriteLine(n);*/
+            // if we want to remove all given number than we will use for loop (we can not use foreach because it will give error)
+            /*for (var i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] == 1)
+                    numbers.Remove(numbers[i]);
+            }
+            foreach (var n in numbers)
+                Console.WriteLine(n);*/
+
+            numbers.Clear(); // it will clear all elements from list
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+        }
+    }
+}
+```
