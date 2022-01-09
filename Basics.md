@@ -910,3 +910,65 @@ namespace Controle_flow_exercise
     }
 }
 ```
+# Arrays and lists
+## Array
+>Represents a fixed number of variables of particular type.
+>
+>In C# there is two types of array
+>1. Single dimension
+>2. Multi diemension
+### Single dimension array
+>The one dimensional array or single dimensional array in C# is the simplest type of array that contains only one row for storing data. It has single set of square bracket (“[]”). To declare single dimensional array in C#, you can write the following code.
+```
+var numbers = new int[5];
+```
+```
+var numbers - new int[5] { 1, 2, 3, 4, 5 };
+```
+### Multi dimension array
+>A multi-dimensional array in C# is an array that contains more than one rows to store the data.
+>
+>We have two types of multi dimensional array in c sharp
+>1. Rectangular array
+>2. Jagged array
+>
+#### Rectangular array
+>In ractangular array each row has the exact same numbers of columns.
+>##### Syntax (2D ractangular array)
+```
+var matrix = new int[3,5];
+```
+```
+var matrix = new int[3,5]
+{
+    { 1, 2, 3, 4, 5 },
+    { 6, 7, 8, 9, 10 },
+    { 11, 12, 13, 14, 15 }
+};
+```
+>Syntax for accesing a 2D array
+```
+var element = matrix[1,1];
+```
+>##### Syntax (3D ractangular array)
+```
+var colors = new int[3,5,4];
+```
+#### Jagged array
+>In jagged array the number os columns in each row can be different.
+>a diffrent way to look at jagged array is an array of arrays.
+>##### Syntax
+```
+var array = new int[3][]; // 3 = 3 rows
+array[0] = new int[4];
+array[1] = new int[5];
+array[2] = new int[3];
+```
+>This jagged array will looks like
+>![2022-01-09](https://user-images.githubusercontent.com/92302123/148675027-e89f14a7-8211-470b-8e55-1594eaa9beaf.png)
+>To access an element in this array
+```
+array[0][0] = 1;
+```
+#### Array properties
+>![2022-01-09 (1)](https://user-images.githubusercontent.com/92302123/148675140-f86626fd-8f98-451f-9a32-a163a79975b9.png)
