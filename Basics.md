@@ -1088,3 +1088,111 @@ namespace lists
     }
 }
 ```
+# Date and time
+>Date and Time in C# are two commonly used data types. Both Date and Time in C# are represented using C# DateTime class.
+## Some functions of date and time (code)
+```
+using System;
+
+namespace date_and_time
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var dateTime = new DateTime(2015, 1, 1);
+            var recentDateTime = DateTime.Now; // its return todays date and time both
+            var today = DateTime.Today; // its only return todays date
+
+            //Console.WriteLine("Hour: " + recentDateTime.Hour);
+            //Console.WriteLine("Minuts: " + recentDateTime.Minute);
+
+            var tomrrow = recentDateTime.AddDays(1); // it will return current date + 1day
+            var yesterday = recentDateTime.AddDays(-1); // it will return current date 1 1day
+            //Console.WriteLine(tomrrow);
+            //Console.WriteLine(yesterday);
+
+            Console.WriteLine(recentDateTime.ToLongDateString()); // return string in detailed Date
+            Console.WriteLine(recentDateTime.ToShortDateString()); // return string in short Date
+            Console.WriteLine(recentDateTime.ToLongTimeString()); // return string in detailed time
+            Console.WriteLine(recentDateTime.ToShortTimeString()); // return string in short Date
+            Console.WriteLine(recentDateTime.ToString()); // return string in detailed Date and time
+            Console.WriteLine(recentDateTime.ToString("yyyy-MM-dd")); // date modifier
+            Console.WriteLine(recentDateTime.ToString("yyyy-MM-dd HH:mm")); // date & time modifier
+        }
+    }
+}
+```
+## TimeSpan
+>C# TimeSpan struct represents a time interval that is difference between two times measured in number of days, hours, minutes, and seconds. C# TimeSpan is used to compare two C# DateTime objects to find the difference between two dates.
+```
+using System;
+
+namespace Time_Span
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creating
+            var timeSpan = new TimeSpan(1, 2, 3); // arg1 = hours, arg2 = minuts, arg3 = seconds
+            var timeSpan1 = new TimeSpan(1, 0, 0);
+            var timeSpan2 = TimeSpan.FromHours(1);
+
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+            Console.WriteLine("Duration " + duration);
+
+            // Properties
+            Console.WriteLine("Minutes: " + timeSpan.Minutes);
+            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
+
+            // Add
+            Console.WriteLine("Add example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine("Subtract example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+
+            //ToString
+            Console.WriteLine("ToString: " + timeSpan.ToString());
+
+            // Parse
+            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
+        }
+    }
+}
+```
+# Working with text
+## String
+>### Formating
+>ToLower() function convert string in lower case
+>ToUpper() function convert string in upper case
+>Trim() function trim whitespaces from string
+>### Searching
+>IndexOf('a') function return first index of given input from string
+>LastIndexOf("hello") function return last index of given input from string
+>### Substring
+>Substring(startIndex) function create substring from given string
+>Substring(startIndex, length) overloading same function
+>### Replacing
+>Replace('a', '!') function replace character/string in given string
+>Replace("name", "mosh")
+>### Null checking
+>String.IsNullOrEmpty(str) function check string is empty or null
+>String.IsNullOrWhiteSpace(str) function check string contain whitespace or is null
+>### Splitting
+>str.Split(',') function splite string. here i am splitting string with couma
+>### Converting strings to numbers
+```
+string s = "1234";
+int i = int.Parse(s);
+int j = Convert.ToInt32(s);
+```
+>### Converting numbers to strings
+```
+int i = 1234;
+string s = i.ToString(); // "1234"
+string t = i.ToString("C"); // "? 1,234.00" Converting numbers in string(currency formate)
+string t = i.ToString("C0"); // "? 1,234" Converting numbers in string(currency formate without floating point)
+```
+>#### Common formate specifiers
+>![2022-01-16](https://user-images.githubusercontent.com/92302123/149665830-07bf548a-27e3-4fc0-bff5-3ae492959464.png)
