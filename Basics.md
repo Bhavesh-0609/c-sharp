@@ -1196,3 +1196,44 @@ string t = i.ToString("C0"); // "? 1,234" Converting numbers in string(currency 
 ```
 >#### Common formate specifiers
 >![2022-01-16](https://user-images.githubusercontent.com/92302123/149665830-07bf548a-27e3-4fc0-bff5-3ae492959464.png)
+>### Full code of string
+```
+using System;
+
+namespace string_advance
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var fullName = "Mosh Hamedani      ";
+            Console.WriteLine("Trim: '{0}'",fullName.Trim()); // whitespaces are removed from front and begginning
+            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper()); // converting string to upper case
+
+            // firstname and lastname with substring method
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index + 1);
+            Console.WriteLine("Firstname: " + firstName);
+            Console.WriteLine("Lastname: " + lastName);
+
+            // firstname and lastname with split method
+            var names = fullName.Split(' ');
+            Console.WriteLine("Firstname: " + names[0]);
+            Console.WriteLine("Lastname: " + names[1]);
+
+            Console.WriteLine(fullName.Replace("Mosh", "Moshfegh")); // replacing
+
+            var nullString = "";
+            Console.WriteLine(String.IsNullOrEmpty(nullString));
+
+            var str = "25";
+            var age = Convert.ToByte(str);
+            Console.WriteLine(age);
+
+            var price = 29.95f;
+            Console.WriteLine(price.ToString("C"));
+        }
+    }
+}
+```
