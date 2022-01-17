@@ -1297,3 +1297,46 @@ namespace Summarising_Text
 >- Clear()
 
 >For use some functions of string builder you have to add `using System.Text;`
+
+>### StringBuilder (code)
+```
+using System.Text;
+using System;
+
+namespace String_Builder
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var builder = new StringBuilder();
+            builder.Append('-',10); // adding 10 '-'
+            builder.AppendLine();
+            builder.Append("Header");
+            builder.AppendLine();
+            builder.Append('-', 10);
+
+            builder.Replace('-', '+'); // replacing '-' to '+'
+
+            builder.Remove(0, 10); // removing 10 characters from 0 to 10
+
+            builder.Insert(0, new string('-', 10)); // inserting '-' , 1st arg = index and 2nd arg is value
+
+            // You can also write like this
+            /*builder
+                .Append('-', 10)
+                .AppendLine()
+                .Append("Header")
+                .AppendLine()
+                .Append('-', 10)
+                .Replace('-', '+')
+                .Remove(0, 10)
+                .Insert(0, new string('-', 10));*/
+
+            Console.WriteLine(builder);
+
+            Console.WriteLine("First Char: " + builder[0]); // accesing character
+        }
+    }
+}
+```
