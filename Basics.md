@@ -1278,3 +1278,22 @@ namespace Summarising_Text
     }
 }
 ```
+## StringBuilder (String manipulator)
+>String builder is  a class that is defined in the system that takes namespace and represents immutable string and makes it really easy and fast to create a string and modified on the fly.
+
+>### Not for searching
+>
+>- IndexOf()
+>- LastIndexOf()
+>- Contains()
+>- StartsWith() etc...
+
+>### String manipulation methods
+>
+>- Append()
+>- Insert()
+>- Remove()
+>- Replace()
+>- Clear()
+
+>For use some functions of string builder you have to add `using System.Text;`
