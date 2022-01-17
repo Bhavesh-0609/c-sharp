@@ -965,7 +965,9 @@ array[1] = new int[5];
 array[2] = new int[3];
 ```
 >This jagged array will looks like
+>
 >![2022-01-09](https://user-images.githubusercontent.com/92302123/148675027-e89f14a7-8211-470b-8e55-1594eaa9beaf.png)
+>
 >To access an element in this array
 ```
 array[0][0] = 1;
@@ -1233,6 +1235,45 @@ namespace string_advance
 
             var price = 29.95f;
             Console.WriteLine(price.ToString("C"));
+        }
+    }
+}
+```
+## Summarising text (code)
+```
+using System;
+using System.Collections.Generic;
+
+namespace Summarising_Text
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var sentence = "This is going to be a really really really really really long text.";
+            var summary = SummarizeText(sentence, 20);
+            Console.WriteLine(summary);
+        }
+        static string SummarizeText(string text, int maxLength = 20)
+        {
+            if (text.Length < maxLength)
+                return text;
+            
+            var words = text.Split(' ');
+            var totalCharacters = 0;
+            var summaryWords = new List<String>();
+
+            foreach (var word in words)
+            {
+                summaryWords.Add(word);
+
+                    totalCharacters += word.Length + 1;
+                if (totalCharacters > maxLength)
+                    break;
+            }
+
+            var summary = String.Join(' ', summaryWords) + "...";
+            return summary;
         }
     }
 }
