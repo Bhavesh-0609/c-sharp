@@ -1340,3 +1340,129 @@ namespace String_Builder
     }
 }
 ```
+## Programming types
+### 1. Procedural programming
+>A programming paradigm based on procedure calls.
+### 2. Object-oriented programming
+>A programming paradigm based on objects.
+# Working with files
+## Sytem.IO namespace
+>For working with files you have to use `System.IO` namespace.
+>
+>some comman classes from System.IO
+>1. File, FileInfo
+>    - Provide methods for creating, copying, deleting, moving, and opening of files.
+>    - Different between File and FileInfo
+>      - FileInfo: provide instance methods
+>      - File: provide static methods
+>    - Some methods
+>       1. Create()
+>       2. Copy()
+>       3. Delete()
+>       4. Exists()
+>       5. GetAttributes()
+>       6. Move()
+>       7. ReadAllText()
+>2. Directory, DirectoryInfo
+>    - Directory anf DirectoryInfo are very similar to File and FileInfo
+>    - Different between Directory and DirectoryInfo
+>       - DirectoryInfo: provide instance methods
+>       - Directory: provide static methods
+>    - Some methods
+>        1. CreateDirectory()
+>        2. Delete()
+>        3. Exist()
+>        4. GetCurrentDirectory()
+>        5. GetFiles()
+>        6. Move()
+>        7. GetLogicalDrives()
+>3. Path
+>    - We also have the path class which provides methods to work with a string that contains a file or directory path information.
+>    - Some methods
+>        1. GetDirectoryName()
+>        2. GetFileName()
+>        3. GetExtension()
+>        4. GetTempPath()
+## File and FileInfo
+> Code
+```
+using System;
+using System.IO;
+namespace file_and_fileinfo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var path = @"c:\somefile.jpg";
+            File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true); // this will copy file one to another directory
+            File.Delete(path); // this will delete file
+            if (File.Exists(path)) // this will cheack whether given file is exist or not
+            {
+                //
+            }
+            var content = File.ReadAllText(path); // this will read all text from file and assign it to string
+
+            var fileInfo = new FileInfo(path); // creating a object
+            fileInfo.CopyTo("filename"); // copying file
+            fileInfo.Delete(); // deleting file
+            if (fileInfo.Exists) ;// this will cheack whether given file is exist or not
+            {
+                //
+            }
+        }
+    }
+}
+```
+## Directory, DirectoryInfo
+> Code
+```
+using System;
+using System.IO;
+
+namespace Directory_and_DirectoryInfo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Directory.CreateDirectory(@"c:\temp\folder1"); // creating directory
+
+            //var files = Directory.GetFiles(@"D:\vs code", "*.*", SearchOption.AllDirectories); // getting files names , 1st overload is path , 2nd is filter for files (here we used *.* its mean all files with all extention), and 3rd is give names of files all subdirectorys name
+            //foreach(var file in files)
+            //    Console.WriteLine(file);
+
+            var directories = Directory.GetDirectories(@"D:\vs code", "*.*", SearchOption.AllDirectories); // getting files names , 1st overload is path , 2nd is filter for files (here we used *.* its mean all files with all extention), and 3rd is give names of all files of given directory name
+            foreach (var directory in directories)
+                Console.WriteLine(directory);
+
+            Directory.Exists("name"); // cheacking directory exist or not
+
+            var directoryInfo = new DirectoryInfo("path"); // creating directoryinfo
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
+        }
+    }
+}
+```
+## Path
+> Code
+```
+using System;
+using System.IO;
+namespace path_in_cSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var path = @"C:Projects\CSharpFundamentals\HelloWorld\HelloWorld.sln";
+
+            Console.WriteLine("Extension: " + Path.GetExtension(path));
+            Console.WriteLine("File Name Without Extension: " + Path.GetFileNameWithoutExtension(path));
+            Console.WriteLine("File Name: " + Path.GetFileName(path));
+            Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));
+        }
+    }
+}
+```
